@@ -59,38 +59,38 @@ st.sidebar.title("Red Vial")
 
 
 # Obtener la capa GeoJSON Red Vial Principal
-show_red_vial_layers = st.sidebar.checkbox("Red Vial", value=False)
+# show_red_vial_layers = st.sidebar.checkbox("Red Vial", value=False)
 
-geojson_url_redvial_principal = "https://www.idecom.gob.ar/geoserver/base/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=base%3Aa307-CAMN-RedVialPrincipal&outputFormat=application%2Fjson&bbox=-78.9854,-41.1452,-62.9836,-37.4950"
-geojson_response_redvial_principal = requests.get(geojson_url_redvial_principal)
-geojson_data_redvial_principal = geojson_response_redvial_principal.json()
+# geojson_url_redvial_principal = "https://www.idecom.gob.ar/geoserver/base/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=base%3Aa307-CAMN-RedVialPrincipal&outputFormat=application%2Fjson&bbox=-78.9854,-41.1452,-62.9836,-37.4950"
+# geojson_response_redvial_principal = requests.get(geojson_url_redvial_principal)
+# geojson_data_redvial_principal = geojson_response_redvial_principal.json()
 
-geojson_layer_redvial_principal = folium.GeoJson(
-    geojson_data_redvial_principal,
-    name="Red Vial Principal",
-    style_function=lambda feature: {
-        "fillColor": "#ffff00",
-        "color": "black",
-        "weight": 2,
-        "dashArray": "5, 5",
-    }
-)
+# geojson_layer_redvial_principal = folium.GeoJson(
+#    geojson_data_redvial_principal,
+#    name="Red Vial Principal",
+#    style_function=lambda feature: {
+#        "fillColor": "#ffff00",
+#        "color": "black",
+#        "weight": 2,
+#        "dashArray": "5, 5",
+#    }
+#)
 
 # Obtener la capa GeoJSON Red Vial Secundaria
-geojson_url_redvial_secundaria = "https://www.idecom.gob.ar/geoserver/base/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=base%3Aa308-CAMP-RedVialsecundaria&outputFormat=application%2Fjson&bbox=-78.9854,-41.1452,-62.9836,-37.4950"
-geojson_response_redvial_secundaria = requests.get(geojson_url_redvial_secundaria)
-geojson_data_redvial_secundaria = geojson_response_redvial_secundaria.json()
+# geojson_url_redvial_secundaria = "https://www.idecom.gob.ar/geoserver/base/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=base%3Aa308-CAMP-RedVialsecundaria&outputFormat=application%2Fjson&bbox=-78.9854,-41.1452,-62.9836,-37.4950"
+# geojson_response_redvial_secundaria = requests.get(geojson_url_redvial_secundaria)
+# geojson_data_redvial_secundaria = geojson_response_redvial_secundaria.json()
 
-geojson_layer_redvial_secundaria = folium.GeoJson(
-    geojson_data_redvial_secundaria,
-    name="Red Vial Secundaria"
-)
+# geojson_layer_redvial_secundaria = folium.GeoJson(
+#    geojson_data_redvial_secundaria,
+#    name="Red Vial Secundaria"
+# )
 
 
-if show_red_vial_layers:
+# if show_red_vial_layers:
 
-    geojson_layer_redvial_principal.add_to(mapa)
-    geojson_layer_redvial_secundaria.add_to(mapa)
+#    geojson_layer_redvial_principal.add_to(mapa)
+#    geojson_layer_redvial_secundaria.add_to(mapa)
 
 
 
@@ -99,7 +99,7 @@ if show_red_vial_layers:
 
 
 # Añadir control de capas si hay al menos una capa seleccionada
-if show_wms_layer or show_red_vial_layers:
+if show_wms_layer: # or show_red_vial_layers:
     folium.LayerControl().add_to(mapa)
 
 # Mostrar el mapa en Streamlit
