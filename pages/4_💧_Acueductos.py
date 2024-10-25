@@ -22,7 +22,7 @@ st.sidebar.title("Acueductos")
 show_geojson_layer_acueductos = st.sidebar.checkbox("Acueductos", value=True)
 
 
-geojson_url_acueductos = "https://giscopade.neuquen.gov.ar/geoserver/Copade/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Copade:oleoductos&outputFormat=application%2Fjson"
+geojson_url_acueductos = "https://giscopade.neuquen.gov.ar/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=oleoductos&outputFormat=application%2Fjson"
 geojson_response_acueductos = requests.get(geojson_url_acueductos)
 geojson_data_acueductos = geojson_response_acueductos.json()
 
