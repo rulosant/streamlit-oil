@@ -39,7 +39,7 @@ show_geojson_layer_ductos = st.sidebar.checkbox("Oleoductos", value=True)
 
 
 # Obtener la capa Oleoductos COPADE
-geojson_url_ductos = "https://giscopade.neuquen.gov.ar/geoserver/Copade/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Copade:oleoductos&outputFormat=application%2Fjson"
+geojson_url_ductos = "https://giscopade.neuquen.gov.ar/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=oleoductos&outputFormat=application%2Fjson"
 geojson_response_ductos = requests.get(geojson_url_ductos)
 geojson_data_ductos = geojson_response_ductos.json()
 
